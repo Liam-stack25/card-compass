@@ -1,0 +1,787 @@
+[
+  {
+    "id": "amex-platinum",
+    "name": "American Express Platinum Card",
+    "issuer": "American Express",
+    "network": "Amex",
+    "tier": "premium",
+    "annualFee": 799,
+    "annualFeeNote": null,
+    "supplementaryFee": 250,
+    "incomeRequired": {
+      "personal": null,
+      "household": null,
+      "note": "No stated minimum"
+    },
+    "rewardsProgram": "Amex Membership Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 2.0,
+      "redemptionNote": "Best value via Aeroplan transfer at 1:1 for premium cabin flights"
+    },
+    "earnRates": {
+      "travel": 2,
+      "dining": 2,
+      "groceries": 1,
+      "transit": 1,
+      "streaming": 1,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 130000,
+      "tiers": [
+        { "points": 90000, "condition": "$10,000 spend in first 3 months" },
+        { "points": 40000, "condition": "Make a purchase between months 15–17" }
+      ]
+    },
+    "credits": [
+      { "type": "travel", "amount": 200, "note": "Annual $200 travel credit" },
+      { "type": "dining", "amount": 200, "note": "Annual $200 dining credit" }
+    ],
+    "perks": [
+      "Centurion Lounge access",
+      "Priority Pass membership (unlimited visits)",
+      "Plaza Premium lounge access",
+      "Marriott Bonvoy Gold status",
+      "Hilton Honors Gold status",
+      "Fine Hotels + Resorts program",
+      "Amex Experiences & Front of the Line"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "Centurion + Priority Pass + Plaza Premium",
+      "visitsPerYear": "unlimited"
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 15,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["lounge access", "premium travel", "flexible rewards", "hotel status"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "amex-cobalt",
+    "name": "American Express Cobalt Card",
+    "issuer": "American Express",
+    "network": "Amex",
+    "tier": "mid",
+    "annualFee": 155.88,
+    "annualFeeNote": "Charged at $12.99/month",
+    "supplementaryFee": 0,
+    "incomeRequired": {
+      "personal": null,
+      "household": null,
+      "note": "No stated minimum"
+    },
+    "rewardsProgram": "Amex Membership Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.5,
+      "redemptionNote": "Best value via Amex Fixed Points Travel or Aeroplan transfer"
+    },
+    "earnRates": {
+      "dining": 5,
+      "groceries": 5,
+      "bar": 5,
+      "travel": 2,
+      "transit": 2,
+      "streaming": 2,
+      "other": 1
+    },
+    "earnRateCaps": {
+      "dining_groceries_bar_combined": 2500,
+      "note": "5x capped at $2,500/month combined across eats, drinks & groceries"
+    },
+    "welcomeBonus": {
+      "totalPotential": 15000,
+      "tiers": [
+        { "points": 15000, "condition": "Earn 1,250 pts/month by spending $750+/month for 12 months. No traditional sign-up bonus." }
+      ]
+    },
+    "credits": [],
+    "perks": [
+      "Hotel Collection access (room upgrade + $100 credit)",
+      "Amex Experiences & Front of the Line",
+      "Amex Offers"
+    ],
+    "lounge": {
+      "included": false,
+      "type": null,
+      "visitsPerYear": 0
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 15,
+      "tripCancellation": false,
+      "tripInterruption": false,
+      "flightDelay": false,
+      "baggageDelay": false,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["dining", "groceries", "everyday spend", "flexible rewards"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "amex-gold-rewards",
+    "name": "American Express Gold Rewards Card",
+    "issuer": "American Express",
+    "network": "Amex",
+    "tier": "mid",
+    "annualFee": 250,
+    "annualFeeNote": null,
+    "supplementaryFee": 50,
+    "incomeRequired": {
+      "personal": null,
+      "household": null,
+      "note": "No stated minimum"
+    },
+    "rewardsProgram": "Amex Membership Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.5,
+      "redemptionNote": "Transfer to Aeroplan at 1:1 for best value"
+    },
+    "earnRates": {
+      "travel": 2,
+      "dining": 2,
+      "groceries": 2,
+      "gas": 2,
+      "transit": 1,
+      "streaming": 1,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 90000,
+      "tiers": [
+        { "points": 30000, "condition": "$4,000 spend in first 3 months" },
+        { "points": 60000, "condition": "Earn 5,000 pts/month by spending $1,000+/month for remaining months of first year" }
+      ]
+    },
+    "credits": [
+      { "type": "travel", "amount": 100, "note": "$100 annual travel credit" }
+    ],
+    "perks": [
+      "1 free supplementary card",
+      "Hotel Collection access",
+      "Amex Experiences & Front of the Line"
+    ],
+    "lounge": {
+      "included": false,
+      "type": null,
+      "visitsPerYear": 0
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 15,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["flexible rewards", "travel", "groceries", "mid-tier Amex"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "scotiabank-gold-amex",
+    "name": "Scotiabank Gold American Express Card",
+    "issuer": "Scotiabank",
+    "network": "Amex",
+    "tier": "mid",
+    "annualFee": 120,
+    "annualFeeNote": null,
+    "supplementaryFee": 0,
+    "incomeRequired": {
+      "personal": 12000,
+      "household": 16000,
+      "note": null
+    },
+    "rewardsProgram": "Scene+",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.0,
+      "redemptionNote": "1 cpp on eligible grocery, dining, entertainment; redeemable at Cineplex, Empire stores, travel"
+    },
+    "earnRates": {
+      "dining": 6,
+      "groceries": 6,
+      "entertainment": 6,
+      "gas": 3,
+      "transit": 3,
+      "streaming": 3,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 45000,
+      "tiers": [
+        { "points": 45000, "condition": "$2,000 spend in first 3 months. Additional $850 in welcome value included. $7,500 spend in first year unlocks full offer." }
+      ]
+    },
+    "credits": [],
+    "perks": [
+      "No foreign transaction fees",
+      "Scene+ partner benefits",
+      "Amex Experiences & Front of the Line"
+    ],
+    "lounge": {
+      "included": false,
+      "type": null,
+      "visitsPerYear": 0
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 25,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 0,
+    "bestFor": ["dining", "groceries", "entertainment", "no FX fee"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "scotiabank-passport-visa-infinite",
+    "name": "Scotiabank Passport Visa Infinite Card",
+    "issuer": "Scotiabank",
+    "network": "Visa",
+    "tier": "mid",
+    "annualFee": 150,
+    "annualFeeNote": null,
+    "supplementaryFee": 0,
+    "incomeRequired": {
+      "personal": 60000,
+      "household": 100000,
+      "note": null
+    },
+    "rewardsProgram": "Scene+",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.0,
+      "redemptionNote": "1 cpp on travel and eligible purchases"
+    },
+    "earnRates": {
+      "groceries": 3,
+      "dining": 2,
+      "entertainment": 2,
+      "transit": 2,
+      "streaming": 2,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 60000,
+      "tiers": [
+        { "points": 40000, "condition": "$2,000 spend in first 3 months" },
+        { "points": 10000, "condition": "$10,000 total spend in first 6 months" },
+        { "points": 10000, "condition": "$40,000 total annual spend" }
+      ]
+    },
+    "credits": [],
+    "perks": [
+      "No foreign transaction fees",
+      "6 complimentary airport lounge visits per year (Visa Airport Companion / DragonPass)",
+      "Visa Infinite concierge",
+      "Visa Infinite dining & wine country events"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "Visa Airport Companion (DragonPass)",
+      "visitsPerYear": 6
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 25,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 0,
+    "bestFor": ["travel", "no FX fee", "lounge access", "Visa acceptance"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "td-first-class-visa-infinite",
+    "name": "TD First Class Travel Visa Infinite Card",
+    "issuer": "TD Bank",
+    "network": "Visa",
+    "tier": "mid",
+    "annualFee": 139,
+    "annualFeeNote": "First year rebate often available",
+    "supplementaryFee": 50,
+    "incomeRequired": {
+      "personal": 60000,
+      "household": 100000,
+      "note": null
+    },
+    "rewardsProgram": "TD Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 0.5,
+      "redemptionNote": "Best value via Expedia for TD at ~0.5 cpp; lower on other redemptions"
+    },
+    "earnRates": {
+      "travel_expedia": 8,
+      "groceries": 6,
+      "dining": 6,
+      "recurringBills": 4,
+      "other": 2
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 165000,
+      "tiers": [
+        { "points": 20000, "condition": "On first purchase" },
+        { "points": 145000, "condition": "$7,500 spend in first 180 days" }
+      ]
+    },
+    "credits": [],
+    "perks": [
+      "Visa Infinite concierge",
+      "Visa Infinite dining & wine country events",
+      "Expedia for TD portal bonus earn"
+    ],
+    "lounge": {
+      "included": false,
+      "type": null,
+      "visitsPerYear": 0
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 21,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["groceries", "dining", "recurring bills", "Expedia bookings"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "td-aeroplan-visa-infinite-privilege",
+    "name": "TD Aeroplan Visa Infinite Privilege Card",
+    "issuer": "TD Bank",
+    "network": "Visa",
+    "tier": "premium",
+    "annualFee": 599,
+    "annualFeeNote": null,
+    "supplementaryFee": 199,
+    "incomeRequired": {
+      "personal": 100000,
+      "household": 150000,
+      "note": null
+    },
+    "rewardsProgram": "Aeroplan",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.8,
+      "redemptionNote": "Premium value on business/first class via Aeroplan; highly variable"
+    },
+    "earnRates": {
+      "travel_aircanada": 2,
+      "dining": 2,
+      "groceries": 2,
+      "travel": 1.5,
+      "other": 1.25
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 85000,
+      "tiers": [
+        { "points": 20000, "condition": "On first purchase" },
+        { "points": 35000, "condition": "$12,000 spend in first 180 days" },
+        { "points": 30000, "condition": "$24,000 total spend in first year" }
+      ]
+    },
+    "credits": [
+      { "type": "nexus", "amount": 100, "note": "$100 NEXUS fee rebate every 48 months" }
+    ],
+    "perks": [
+      "Air Canada Maple Leaf Lounge access",
+      "Priority Pass membership (unlimited)",
+      "Air Canada priority check-in and boarding",
+      "First checked bag free (cardholder + 8 companions)",
+      "Air Canada 50% elite status qualifying miles boost",
+      "NEXUS fee rebate",
+      "Visa Infinite Privilege concierge"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "Air Canada Maple Leaf Lounge + Priority Pass",
+      "visitsPerYear": "unlimited"
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 31,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": true
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["Air Canada frequent flyers", "Aeroplan", "lounge access", "premium travel"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "cibc-aventura-visa-infinite",
+    "name": "CIBC Aventura Visa Infinite Card",
+    "issuer": "CIBC",
+    "network": "Visa",
+    "tier": "mid",
+    "annualFee": 139,
+    "annualFeeNote": "First year rebate often available",
+    "supplementaryFee": 50,
+    "incomeRequired": {
+      "personal": 60000,
+      "household": 100000,
+      "note": null
+    },
+    "rewardsProgram": "Aventura",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.0,
+      "redemptionNote": "1 cpp via CIBC Rewards travel centre; Aeroplan transfer available at reduced rate"
+    },
+    "earnRates": {
+      "travel_cibc": 2,
+      "groceries": 1.5,
+      "gas": 1.5,
+      "drugstore": 1.5,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 60000,
+      "tiers": [
+        { "points": 15000, "condition": "On first purchase" },
+        { "points": 30000, "condition": "$3,000 spend in first 4 months" },
+        { "points": 15000, "condition": "$4,000 net spend in first 4 statements" }
+      ]
+    },
+    "credits": [
+      { "type": "travel", "amount": 100, "note": "$100 annual travel credit" }
+    ],
+    "perks": [
+      "4 complimentary airport lounge passes (DragonPass)",
+      "Visa Infinite concierge",
+      "Visa Infinite dining & wine country events",
+      "NEXUS fee rebate"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "DragonPass",
+      "visitsPerYear": 4
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 15,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["flexible travel rewards", "groceries", "gas", "lounge access"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "rbc-avion-visa-infinite",
+    "name": "RBC Avion Visa Infinite Card",
+    "issuer": "RBC",
+    "network": "Visa",
+    "tier": "mid",
+    "annualFee": 120,
+    "annualFeeNote": null,
+    "supplementaryFee": 50,
+    "incomeRequired": {
+      "personal": 60000,
+      "household": 100000,
+      "note": null
+    },
+    "rewardsProgram": "RBC Avion Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.0,
+      "redemptionNote": "1 cpp on travel via RBC Rewards; transfer to BA Avios, WestJet, Cathay Pacific"
+    },
+    "earnRates": {
+      "travel": 1.25,
+      "dining": 1,
+      "groceries": 1,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 55000,
+      "tiers": [
+        { "points": 35000, "condition": "On approval" },
+        { "points": 20000, "condition": "$5,000 spend in first 6 months" }
+      ]
+    },
+    "credits": [],
+    "perks": [
+      "Visa Infinite concierge",
+      "Visa Infinite dining & wine country events",
+      "RBC Offers"
+    ],
+    "lounge": {
+      "included": false,
+      "type": null,
+      "visitsPerYear": 0
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 15,
+      "tripCancellation": false,
+      "tripInterruption": false,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["flat rate earn", "flexible travel redemption", "simple rewards"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "rbc-avion-visa-infinite-privilege",
+    "name": "RBC Avion Visa Infinite Privilege Card",
+    "issuer": "RBC",
+    "network": "Visa",
+    "tier": "premium",
+    "annualFee": 399,
+    "annualFeeNote": null,
+    "supplementaryFee": 149,
+    "incomeRequired": {
+      "personal": 200000,
+      "household": null,
+      "note": "$200,000 personal income confirmed"
+    },
+    "rewardsProgram": "RBC Avion Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.0,
+      "redemptionNote": "Transfer to BA Avios, Cathay Pacific, WestJet for best value"
+    },
+    "earnRates": {
+      "travel": 1.25,
+      "dining": 1,
+      "groceries": 1,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 70000,
+      "tiers": [
+        { "points": 35000, "condition": "On approval" },
+        { "points": 20000, "condition": "$5,000 spend in first 6 months" },
+        { "points": 15000, "condition": "1-year anniversary bonus" }
+      ]
+    },
+    "credits": [
+      { "type": "travel", "amount": 100, "note": "$100 annual travel enhancement credit" }
+    ],
+    "perks": [
+      "Priority Pass membership (unlimited visits)",
+      "Visa Infinite Privilege concierge",
+      "Premium travel insurance package",
+      "VIP airport meet-and-greet at select airports"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "Priority Pass",
+      "visitsPerYear": "unlimited"
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 31,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": true
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["lounge access", "premium travel", "flat rate earn", "Visa acceptance"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "bmo-ascend-world-elite",
+    "name": "BMO Ascend World Elite Mastercard",
+    "issuer": "BMO",
+    "network": "Mastercard",
+    "tier": "mid",
+    "annualFee": 150,
+    "annualFeeNote": "First year rebate often available",
+    "supplementaryFee": 50,
+    "incomeRequired": {
+      "personal": 80000,
+      "household": 150000,
+      "note": null
+    },
+    "rewardsProgram": "BMO Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 0.67,
+      "redemptionNote": "150 points = $1 on travel (0.67 cpp); lower for non-travel redemptions"
+    },
+    "earnRates": {
+      "travel": 5,
+      "dining": 3,
+      "entertainment": 3,
+      "recurringBills": 2,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 100000,
+      "tiers": [
+        { "points": 45000, "condition": "$5,000 spend by day 110" },
+        { "points": 20000, "condition": "$10,000 total spend by day 180" },
+        { "points": 35000, "condition": "$20,000 total spend by day 365" }
+      ]
+    },
+    "credits": [],
+    "perks": [
+      "4 complimentary airport lounge visits per year (DragonPass)",
+      "Mastercard Travel Pass",
+      "BMO Concierge service"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "DragonPass",
+      "visitsPerYear": 4
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 21,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 2.5,
+    "bestFor": ["travel spend", "dining", "entertainment", "recurring bills"],
+    "annualFeeWaived": false
+  },
+  {
+    "id": "national-bank-world-elite",
+    "name": "National Bank World Elite Mastercard",
+    "issuer": "National Bank",
+    "network": "Mastercard",
+    "tier": "mid",
+    "annualFee": 150,
+    "annualFeeNote": null,
+    "supplementaryFee": 50,
+    "incomeRequired": {
+      "personal": 80000,
+      "household": 150000,
+      "note": null
+    },
+    "rewardsProgram": "À la carte Rewards",
+    "rewardsType": "points",
+    "pointValue": {
+      "estimatedCentsPerPoint": 1.0,
+      "redemptionNote": "1 cpp on travel bookings via À la carte Travel"
+    },
+    "earnRates": {
+      "groceries": 5,
+      "dining": 5,
+      "gas": 2,
+      "recurringBills": 2,
+      "travel": 2,
+      "other": 1
+    },
+    "earnRateCaps": {},
+    "welcomeBonus": {
+      "totalPotential": 25000,
+      "tiers": [
+        { "points": 5000, "condition": "$5,000 spend in first 3 months" },
+        { "points": 10000, "condition": "$20,000 spend in first 12 months" },
+        { "points": 10000, "condition": "Enrol in credit card insurance within first 3 months" }
+      ]
+    },
+    "credits": [
+      { "type": "airportParking", "amount": 150, "note": "Annual airport parking or valet credit" },
+      { "type": "lounge", "amount": 100, "note": "Annual lounge access credit" }
+    ],
+    "perks": [
+      "No foreign transaction fees",
+      "8 complimentary airport lounge visits per year (DragonPass)",
+      "$150 annual airport parking/valet credit",
+      "$100 annual lounge credit",
+      "Travel assistance and emergency medical services"
+    ],
+    "lounge": {
+      "included": true,
+      "type": "DragonPass",
+      "visitsPerYear": 8
+    },
+    "insurance": {
+      "travelMedical": true,
+      "travelMedicalDays": 60,
+      "tripCancellation": true,
+      "tripInterruption": true,
+      "flightDelay": true,
+      "baggageDelay": true,
+      "rentalCar": true,
+      "purchaseProtection": true,
+      "extendedWarranty": true,
+      "mobileDevice": false
+    },
+    "foreignTransactionFee": 0,
+    "bestFor": ["groceries", "dining", "no FX fee", "lounge access", "travel medical"],
+    "annualFeeWaived": false
+  }
+]
