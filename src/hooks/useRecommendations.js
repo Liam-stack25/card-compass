@@ -5,7 +5,7 @@ import cards from '../data/cards.json'
 // than generic redemptions (premium AC cabin flights → ~2.5× stated cpp).
 const AEROPLAN_AIR_CANADA_CPP_MULTIPLIER = 2.5
 
-function estimateBaseValue(card, spending, cppOverride) {
+export function estimateBaseValue(card, spending, cppOverride) {
   const {
     food = 0, gas = 0, travel = 0,
     transit = 0, streaming = 0, entertainment = 0, other = 0,

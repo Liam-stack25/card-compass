@@ -14,7 +14,7 @@ const cardVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.24, ease: 'easeOut' } },
 }
 
-export default function BrowseCards({ onSelectCard }) {
+export default function BrowseCards({ onSelectCard, onCompare, compareBaseId }) {
   const byTier = {
     premium: cards.filter((c) => c.tier === 'premium'),
     mid: cards.filter((c) => c.tier === 'mid'),
@@ -74,12 +74,21 @@ export default function BrowseCards({ onSelectCard }) {
 
                   <div className="browse-card-footer">
                     <span className="browse-program">{card.rewardsProgram}</span>
-                    <span className="rec-arrow">
-                      Details
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="9 18 15 12 9 6" />
-                      </svg>
-                    </span>
+                    <div className="browse-footer-actions">
+                      <button
+                        className={`browse-compare-btn${compareBaseId === card.id ? ' active' : ''}`}
+                        onClick={(e) => { e.stopPropagation(); onCompare(card) }}
+                        aria-label="Compare card"
+                      >
+                        <span className="material-icons-outlined" style={{ fontSize: 16 }}>compare_arrows</span>
+                      </button>
+                      <span className="rec-arrow">
+                        Details
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               ))}

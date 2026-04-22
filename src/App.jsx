@@ -7,6 +7,9 @@ import SpendingProfile from './components/SpendingProfile'
 import BrowseCards from './components/BrowseCards'
 import Recommendations from './components/Recommendations'
 import CardDetail from './components/CardDetail'
+import CardCompare from './components/CardCompare'
+import CardPickerSheet from './components/CardPickerSheet'
+import CardMockup from './components/CardMockup'
 import './App.css'
 
 const DEFAULT_SPENDING = {
@@ -25,8 +28,7 @@ const DEFAULT_PREFERENCES = {
   niceToHaves: [],
 }
 
-// Canonical forward flow — used to infer slide direction
-const VIEW_ORDER = ['landing', 'preferences', 'profile', 'recommendations', 'detail', 'browse']
+const VIEW_ORDER = ['landing', 'preferences', 'profile', 'recommendations', 'detail', 'browse', 'compare']
 
 const PAGE_VARIANTS = {
   initial: (dir) => ({ opacity: 0, x: dir * 64, y: 0 }),
@@ -35,8 +37,7 @@ const PAGE_VARIANTS = {
 }
 
 const PAGE_TRANSITION = { duration: 0.32, ease: [0.32, 0.72, 0, 1] }
-
-const LANDING_EXIT = { opacity: 0, scale: 0.96, y: 0 }
+const LANDING_EXIT    = { opacity: 0, scale: 0.96, y: 0 }
 
 const CompassIcon = () => (
   <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
@@ -47,15 +48,48 @@ const CompassIcon = () => (
   </svg>
 )
 
-export default function App() {
-  const [view, setView] = useState('landing')
-  const [selectedCard, setSelectedCard] = useState(null)
-  const [spending, setSpending] = useState(DEFAULT_SPENDING)
-  const [preferences, setPreferences] = useState(DEFAULT_PREFERENCES)
+const NeonChevron = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#39FF14"
+    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <polyline points="9 18 15 12 9 6" />
+  </svg>
+)
 
-  // Track direction without causing re-renders
-  const dirRef  = useRef(1)
-  const viewRef = useRef('landing')
+function CompareBar({ card, onOpen, onCancel }) {
+  return (
+    <div className="compare-bar" onClick={onOpen} role="button" tabIndex={0}>
+      <div className="compare-bar-mockup">
+        <CardMockup cardId={card.id} />
+      </div>
+      <div className="compare-bar-info">
+        <div className="compare-bar-label">Compare with...</div>
+        <div className="compare-bar-name">{card.name}</div>
+      </div>
+      <NeonChevron />
+      <button
+        className="compare-bar-cancel"
+        onClick={(e) => { e.stopPropagation(); onCancel() }}
+        aria-label="Cancel comparison"
+      >
+        <span className="material-icons-outlined" style={{ fontSize: 18 }}>close</span>
+      </button>
+    </div>
+  )
+}
+
+export default function App() {
+  const [view, setView]               = useState('landing')
+  const [selectedCard, setSelectedCard] = useState(null)
+  const [spending, setSpending]       = useState(DEFAULT_SPENDING)
+  const [preferences, setPreferences] = useState(DEFAULT_PREFERENCES)
+  const [compareBase, setCompareBase] = useState(null)
+  const [compareCards, setCompareCards] = useState(null)
+  const [pickerOpen, setPickerOpen] = useState(false)
+
+  const dirRef        = useRef(1)
+  const viewRef       = useRef('landing')
+  const compareFromRef = useRef('browse')
+  const detailFromRef  = useRef('recommendations')
 
   const navigate = (newView, explicitDir) => {
     if (explicitDir !== undefined) {
@@ -72,16 +106,35 @@ export default function App() {
   const isLanding = view === 'landing'
 
   const handleSelectCard = (card) => {
+    detailFromRef.current = viewRef.current
     setSelectedCard(card)
     navigate('detail', 1)
   }
 
-  const handleBack = () => navigate('recommendations', -1)
+  const handleBack = () => navigate(detailFromRef.current, -1)
 
   const handleNavigate = (id) => {
     if (id === 'detail' && !selectedCard) return
     navigate(id)
   }
+
+  const handleCompare = (card) => {
+    if (!compareBase) {
+      setCompareBase(card)
+    } else if (compareBase.id === card.id) {
+      setCompareBase(null)
+      setPickerOpen(false)
+    } else {
+      setPickerOpen(false)
+      compareFromRef.current = viewRef.current
+      setCompareCards([compareBase, card])
+      setCompareBase(null)
+      navigate('compare', 1)
+    }
+  }
+
+  const handleCancelCompare  = () => { setCompareBase(null); setPickerOpen(false) }
+  const handleCompareBack    = () => navigate(compareFromRef.current || 'browse', -1)
 
   const dir = dirRef.current
 
@@ -93,7 +146,7 @@ export default function App() {
 
       <main className="main-content">
         <AnimatePresence>
-          {!isLanding && (
+          {!isLanding && view !== 'compare' && view !== 'detail' && (
             <motion.div
               className="app-header"
               initial={{ opacity: 0, y: -10 }}
@@ -192,7 +245,11 @@ export default function App() {
                 exit="exit"
                 transition={PAGE_TRANSITION}
               >
-                <BrowseCards onSelectCard={handleSelectCard} />
+                <BrowseCards
+                  onSelectCard={handleSelectCard}
+                  onCompare={handleCompare}
+                  compareBaseId={compareBase?.id}
+                />
               </motion.div>
             )}
 
@@ -207,7 +264,11 @@ export default function App() {
                 exit="exit"
                 transition={PAGE_TRANSITION}
               >
-                <Recommendations spending={spending} preferences={preferences} onSelectCard={handleSelectCard} />
+                <Recommendations
+                  spending={spending}
+                  preferences={preferences}
+                  onSelectCard={handleSelectCard}
+                />
               </motion.div>
             )}
 
@@ -222,13 +283,58 @@ export default function App() {
                 exit="exit"
                 transition={PAGE_TRANSITION}
               >
-                <CardDetail card={selectedCard} onBack={handleBack} />
+                <CardDetail
+                  card={selectedCard}
+                  onBack={handleBack}
+                  onCompare={handleCompare}
+                  fromView={detailFromRef.current}
+                />
+              </motion.div>
+            )}
+
+            {view === 'compare' && (
+              <motion.div
+                key="compare"
+                style={{ height: '100%' }}
+                custom={dir}
+                variants={PAGE_VARIANTS}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={PAGE_TRANSITION}
+              >
+                <CardCompare
+                  cards={compareCards}
+                  spending={spending}
+                  onBack={handleCompareBack}
+                  onSelectCard={handleSelectCard}
+                />
               </motion.div>
             )}
 
           </AnimatePresence>
         </div>
       </main>
+
+      {/* Compare bar — sits above nav when a base card is selected */}
+      <AnimatePresence>
+        {compareBase && !isLanding && view !== 'compare' && (
+          <motion.div
+            key="compare-bar"
+            style={{ flexShrink: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+          >
+            <CompareBar
+              card={compareBase}
+              onOpen={() => setPickerOpen(true)}
+              onCancel={handleCancelCompare}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {!isLanding && (
@@ -246,6 +352,18 @@ export default function App() {
               cardSelected={!!selectedCard}
             />
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Card picker sheet — rendered above everything */}
+      <AnimatePresence>
+        {pickerOpen && compareBase && (
+          <CardPickerSheet
+            key="picker"
+            excludeId={compareBase.id}
+            onPick={handleCompare}
+            onCancel={() => setPickerOpen(false)}
+          />
         )}
       </AnimatePresence>
     </div>

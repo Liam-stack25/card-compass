@@ -31,7 +31,12 @@ const itemVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.24, ease: 'easeOut' } },
 }
 
-export default function CardDetail({ card, onBack }) {
+const BACK_LABEL = {
+  recommendations: 'Back to Picks',
+  browse:          'Back to Browse',
+}
+
+export default function CardDetail({ card, onBack, onCompare, fromView }) {
   if (!card) return null
 
   const {
@@ -54,7 +59,7 @@ export default function CardDetail({ card, onBack }) {
           transition={{ duration: 0.2 }}
         >
           <BackArrow />
-          Back to Picks
+          {BACK_LABEL[fromView] ?? 'Back'}
         </motion.button>
 
         <motion.div
@@ -89,10 +94,12 @@ export default function CardDetail({ card, onBack }) {
                 <div className="detail-stat-value">${annualFee.toFixed(0)}</div>
                 {annualFeeNote && <div className="detail-stat-sub">{annualFeeNote}</div>}
               </div>
-              <div>
-                <div className="detail-stat-label">Annual Credits</div>
-                <div className="detail-stat-value orange">${totalCredits}</div>
-              </div>
+              {totalCredits > 0 && (
+                <div>
+                  <div className="detail-stat-label">Annual Credits</div>
+                  <div className="detail-stat-value orange">${totalCredits}</div>
+                </div>
+              )}
               <div>
                 <div className="detail-stat-label">Rewards Program</div>
                 <div style={{ fontSize: 13, color: 'var(--color-cream)', marginTop: 4 }}>{rewardsProgram}</div>
@@ -193,7 +200,7 @@ export default function CardDetail({ card, onBack }) {
           </motion.div>
 
           {/* Details */}
-          <motion.div className="detail-section glass" variants={itemVariants} style={{ marginBottom: 0 }}>
+          <motion.div className="detail-section glass" variants={itemVariants}>
             <div className="detail-section-title">Card Details</div>
             <div className="perk-list">
               <div className="perk-item">
@@ -219,6 +226,14 @@ export default function CardDetail({ card, onBack }) {
                 </div>
               )}
             </div>
+          </motion.div>
+
+          {/* Compare CTA */}
+          <motion.div variants={itemVariants} style={{ marginBottom: 0 }}>
+            <button className="compare-detail-btn" onClick={() => onCompare(card)}>
+              <span className="material-icons-outlined" style={{ fontSize: 18 }}>compare_arrows</span>
+              Compare with another card
+            </button>
           </motion.div>
         </motion.div>
       </div>
