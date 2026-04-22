@@ -101,13 +101,25 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
             >
-              <button
-                className="home-btn"
-                onClick={() => navigate('landing', -1)}
-                aria-label="Back to home"
-              >
-                <CompassIcon />
-              </button>
+              {view === 'profile' ? (
+                <button
+                  className="home-btn"
+                  onClick={() => navigate('preferences', -1)}
+                  aria-label="Back to preferences"
+                >
+                  <span className="material-icons-outlined" style={{ fontSize: 20, color: 'rgba(245,240,232,0.8)' }}>
+                    arrow_back
+                  </span>
+                </button>
+              ) : (
+                <button
+                  className="home-btn"
+                  onClick={() => navigate('landing', -1)}
+                  aria-label="Back to home"
+                >
+                  <CompassIcon />
+                </button>
+              )}
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import cards from '../data/cards.json'
+import CardMockup from './CardMockup'
 
 const TIER_LABEL = { premium: 'Premium', mid: 'Mid-tier' }
 
@@ -47,6 +48,10 @@ export default function BrowseCards({ onSelectCard }) {
                   onClick={() => onSelectCard(card)}
                   whileTap={{ scale: 0.985 }}
                 >
+                  <div className="browse-card-mockup">
+                    <CardMockup cardId={card.id} />
+                  </div>
+
                   <div className="browse-card-top">
                     <div>
                       <div className="browse-card-name">{card.name}</div>

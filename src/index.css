@@ -535,6 +535,223 @@ body {
   color: var(--color-neon);
 }
 
+/* ─── Hero recommendation card ─────────────────────────────── */
+
+.rec-hero-card {
+  padding: 24px 20px 20px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(57, 255, 20, 0.18);
+  border-top: 3px solid #39FF14;
+  box-shadow:
+    0 0 0 0 transparent,
+    0 0 32px rgba(57, 255, 20, 0.06),
+    0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.rec-best-match-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #39FF14;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+  margin-bottom: 16px;
+}
+
+/* Centred card illustration — 70% width, float handled by inner FM element */
+.rec-hero-card-mockup {
+  width: 70%;
+  margin: 0 auto 20px;
+}
+
+.rec-hero-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--color-cream);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.rec-match-reason {
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.60);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.rec-hero-stats {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 16px;
+}
+
+.rec-hero-stat {
+  flex: 1;
+  text-align: center;
+}
+
+.rec-hero-stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 5px;
+}
+
+.rec-hero-stat-value {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rec-hero-stat-neon {
+  color: #39FF14;
+  text-shadow: 0 0 12px rgba(57, 255, 20, 0.35);
+}
+
+.rec-hero-stat-orange {
+  color: #FF8C42;
+  text-shadow: 0 0 12px rgba(255, 140, 66, 0.28);
+}
+
+.rec-hero-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.10);
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+.rec-why-section {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 16px;
+}
+
+.rec-why-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: rgba(245, 240, 232, 0.75);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-ui);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.rec-why-bullets {
+  list-style: none;
+  padding: 12px 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rec-why-bullets li {
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.75);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.rec-why-bullets li::before {
+  content: '—';
+  color: #39FF14;
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.rec-hero-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Compact ranked cards (#2 onwards) */
+.rec-compact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  margin-bottom: 7px;
+  cursor: pointer;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rec-compact-card:active {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.rec-compact-rank {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-muted);
+  width: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.rec-compact-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.rec-compact-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-cream);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.rec-compact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.rec-compact-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #39FF14;
+}
+
+.rec-compact-value-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
 /* ─── Card Detail ──────────────────────────────────────────── */
 .detail-back {
   display: flex;
@@ -1201,4 +1418,140 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── CardMockup placement contexts ────────────────────────── */
+
+/* #1 pick hero — tilted, 68% width */
+.rec-hero-mockup {
+  width: 68%;
+  margin: 4px auto 28px;
+  transform: rotate(-3deg);
+  transform-origin: center center;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.42));
+}
+
+/* Card detail top — centered, 85% width; float animation is on inner element */
+.detail-mockup-hero {
+  width: 85%;
+  margin: 2px auto 24px;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.40));
+}
+
+/* Browse list — left-aligned thumbnail, 50% width, 24px gap before text */
+.browse-card-mockup {
+  width: 50%;
+  margin: 0 0 24px;
+  max-width: 100%;
+}
+
+/*
+ * Suppress the theme's inline box-shadow (e.g. 0 24px 64px ...) in list
+ * contexts — it extends ~88px below the card bottom and bleeds over the text
+ * that follows. The wrapper's filter: drop-shadow handles depth instead.
+ */
+.rec-hero-mockup .cmk-card,
+.rec-hero-card-mockup .cmk-card,
+.browse-card-mockup .cmk-card {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.10) !important;
+}
+
+/* ─── Card Mockup ───────────────────────────────────────────── */
+
+.cmk-card {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 85.6 / 54;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  /* background, box-shadow set via inline style per-theme */
+  user-select: none;
+}
+
+/* Single-pixel top edge — colour set via --cmk-edge CSS custom property */
+.cmk-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--cmk-edge);
+  z-index: 4;
+}
+
+/* Fine dot grid — backgroundImage set via inline style per-theme */
+.cmk-texture {
+  position: absolute;
+  inset: 0;
+  background-size: 13px 13px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Diagonal shimmer band — background set via inline style per-theme */
+.cmk-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cmk-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 18px 22px 17px;
+  box-sizing: border-box;
+}
+
+.cmk-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Gradient wordmark — font-size, letter-spacing, text-indent, gradient set inline per-theme */
+.cmk-brand {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.cmk-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cmk-number {
+  display: flex;
+  gap: 10px;
+}
+
+.cmk-group {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.cmk-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  /* background set inline per-theme */
+}
+
+.cmk-issuer {
+  font-family: var(--font-ui);
+  font-size: 7.5px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  line-height: 1.6;
+  /* color set inline per-theme */
+  text-align: right;
 }

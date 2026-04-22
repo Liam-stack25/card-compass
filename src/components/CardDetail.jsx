@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import CardMockup from './CardMockup'
 
 const BackArrow = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -61,6 +62,16 @@ export default function CardDetail({ card, onBack }) {
           initial="hidden"
           animate="show"
         >
+          {/* Card visual */}
+          <motion.div className="detail-mockup-hero" variants={itemVariants}>
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <CardMockup cardId={card.id} large />
+            </motion.div>
+          </motion.div>
+
           {/* Hero */}
           <motion.div className="detail-hero glass" variants={itemVariants}>
             <div className={`detail-tier-badge ${tier}`}>
