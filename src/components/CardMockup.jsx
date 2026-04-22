@@ -48,7 +48,7 @@ function VisaMark({ isDark }) {
   return (
     <div style={{
       fontFamily: '"Helvetica Neue", Arial, sans-serif',
-      fontSize: 20,
+      fontSize: '5.1vw',
       fontWeight: 900,
       fontStyle: 'italic',
       letterSpacing: '-0.02em',
@@ -386,7 +386,8 @@ const CARD_THEMES = {
 
 export default function CardMockup({ cardId = 'amex-cobalt', large = false }) {
   const theme = CARD_THEMES[cardId] ?? CARD_THEMES['amex-cobalt']
-  const wmSize = Math.min(theme.wmSize, large ? 32 : 20)
+  const wmSizePx = Math.min(theme.wmSize, large ? 32 : 20)
+  const wmSize   = `${(wmSizePx / 390 * 100).toFixed(2)}vw`
   const wordmarkLines = theme.wordmark.split('\n')
   const issuerLines   = theme.issuerText.split('\n')
 

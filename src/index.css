@@ -1504,7 +1504,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 18px 22px 17px;
+  padding: 4.5% 5.5% 4.25%;
   box-sizing: border-box;
 }
 
@@ -1549,7 +1549,7 @@ body {
 
 .cmk-issuer {
   font-family: var(--font-ui);
-  font-size: 7.5px;
+  font-size: 1.9vw;
   font-weight: 600;
   letter-spacing: 0.11em;
   line-height: 1.6;
